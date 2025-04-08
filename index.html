@@ -1,26 +1,34 @@
-<!doctype html> <!-- HTML5 문서임을 선언 -->
-<html lang='ko'> <!-- 문서의 언어를 한국어로 설정 -->
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>My First Web Site</title>
   <style>
-    h2 { font-weight:bolder; color:red; }
+    h2 {
+      font-weight: bolder;
+      color: red;
+    }
+
+    .name:hover {
+      color: purple; /* 깨찰빵에 마우스를 올리면 보라색으로 */
+    }
   </style>
   <script>
-     alert('Hello World');
+    alert('Hello World');
   </script>
 </head>
 <body>
   <h2>Hello World</h2>
   <h3>처음 만드는 웹 페이지</h3>
+
+  <!-- 이미지 (이미지 파일이 같은 폴더 안에 있어야 함) -->
   <img src="빵고양이.png" style="width: 300px; height: auto;">
+
+  <!-- 시멘틱 제목 예시 -->
+  <h1>여기는 제일 큰 제목</h1>
+  <h6>여기는 제일 작은 제목</h6>
+
+  <!-- hover 예제 -->
+  <p class="name">깨찰빵</p>
 </body>
-</html>
-  <head>
-    <title>HTML 연습</title> <!-- 브라우저 탭에 표시될 제목 -->
-  </head>
-  <body>
-    <h1>여기는 제일 큰 제목</h1> <!-- 가장 큰 제목 (Heading Level 1) -->
-    <h6>여기는 제일 작은 제목</h6> <!-- 가장 작은 제목 (Heading Level 6) -->
-  </body>
 </html>
