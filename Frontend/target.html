@@ -2,48 +2,72 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>수습 국원 지원 양식</title>
+  <title>수급 국원 지원 양식</title>
   <style>
-    table {
-      width: 500px;
-      border-collapse: collapse;
-      margin: 50px auto;
-    }
-    th, td {
-      border: 1px solid #999;
-      padding: 10px;
+    #tb2, th, td {
       text-align: center;
+      border: 1px solid black;
+      border-collapse: collapse;
     }
-    th {
-      background-color: #f0f0f0;
-    }
-    caption {
-      font-size: 20px;
+
+    #tb2 caption {
+      font-size: 1.95em;
       font-weight: bold;
-      margin-bottom: 15px;
+      text-align: left;
+      padding: 0.5em 0;
+    }
+
+    input, select {
+      width: 90%;
+      padding: 4px;
+    }
+
+    table {
+      margin: 30px auto;
     }
   </style>
 </head>
 <body>
-  <table>
-    <caption>수습 국원 지원 양식</caption>
-    <tr>
-      <th rowspan="3">개인정보</th>
-      <td>이름</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>학과/학번</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>연락처</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th colspan="2">지원 분야</th>
-      <td></td>
-    </tr>
-  </table>
+
+  <form action="#" method="post">
+    <table id="tb2" border="0" width="400" height="150">
+      <caption>수급 국원 지원 양식</caption>
+      <colgroup>
+        <col width="25%">
+        <col width="25%">
+        <col width="50%">
+      </colgroup>
+      <tr>
+        <th rowspan="3">개인정보</th>
+        <th>이름</th>
+        <td><input type="text" name="name" required></td>
+      </tr>
+      <tr>
+        <th>학과/학번</th>
+        <td><input type="text" name="major_id" required></td>
+      </tr>
+      <tr>
+        <th>연락처</th>
+        <td><input type="tel" name="contact" placeholder="010-0000-0000" required></td>
+      </tr>
+      <tr>
+        <th>지원분야</th>
+        <td colspan="2">
+          <select name="field" required>
+            <option value="">-- 선택 --</option>
+            <option value="기획">기획</option>
+            <option value="디자인">디자인</option>
+            <option value="개발">개발</option>
+            <option value="영상">영상</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <button type="submit">제출하기</button>
+    </div>
+  </form>
+
 </body>
 </html>
