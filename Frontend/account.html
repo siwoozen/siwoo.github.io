@@ -59,8 +59,15 @@
       margin-bottom: 15px;
     }
 
+    .radio-group {
+      display: flex;
+      gap: 20px;
+    }
+
     .radio-group label {
-      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
       font-weight: normal;
     }
 
@@ -77,19 +84,38 @@
       font-weight: normal;
     }
 
-    input[type="submit"] {
-      width: 100%;
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .button-group input[type="submit"],
+    .button-group input[type="reset"] {
+      flex: 1;
       padding: 10px;
-      background-color: #4CAF50;
-      color: white;
+      font-size: 16px;
       border: none;
       border-radius: 4px;
-      font-size: 16px;
       cursor: pointer;
     }
 
-    input[type="submit"]:hover {
+    .button-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .button-group input[type="submit"]:hover {
       background-color: #45a049;
+    }
+
+    .button-group input[type="reset"] {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    .button-group input[type="reset"]:hover {
+      background-color: #bbb;
     }
   </style>
 </head>
@@ -111,10 +137,8 @@
 
       <label>성별:</label>
       <div class="radio-group">
-        <input type="radio" id="male" name="gender" value="남자" required>
-        <label for="male">남자</label>
-        <input type="radio" id="female" name="gender" value="여자">
-        <label for="female">여자</label>
+        <label><input type="radio" id="male" name="gender" value="남자" required> 남자</label>
+        <label><input type="radio" id="female" name="gender" value="여자"> 여자</label>
       </div>
 
       <label for="experience">개발 경력:</label>
@@ -128,13 +152,13 @@
 
       <label>경험 언어 (복수 선택 가능):</label>
       <div class="checkbox-group">
-        <label><input type="checkbox" name="languages" value="HTML">HTML</label>
-        <label><input type="checkbox" name="languages" value="CSS">CSS</label>
-        <label><input type="checkbox" name="languages" value="JavaScript">JavaScript</label>
-        <label><input type="checkbox" name="languages" value="Python">Python</label>
-        <label><input type="checkbox" name="languages" value="Java">Java</label>
-        <label><input type="checkbox" name="languages" value="C++">C++</label>
-        <label><input type="checkbox" name="languages" value="Go">Go</label>
+        <label><input type="checkbox" name="languages" value="HTML"> HTML</label>
+        <label><input type="checkbox" name="languages" value="CSS"> CSS</label>
+        <label><input type="checkbox" name="languages" value="JavaScript"> JavaScript</label>
+        <label><input type="checkbox" name="languages" value="Python"> Python</label>
+        <label><input type="checkbox" name="languages" value="Java"> Java</label>
+        <label><input type="checkbox" name="languages" value="C++"> C++</label>
+        <label><input type="checkbox" name="languages" value="Go"> Go</label>
       </div>
 
       <label for="bio">개인 소개 (5줄 이내):</label>
@@ -158,7 +182,10 @@
         <option value="현대자동차">현대자동차</option>
       </select>
 
-      <input type="submit" value="가입하기">
+      <div class="button-group">
+        <input type="submit" value="가입하기">
+        <input type="reset" value="취소">
+      </div>
     </form>
   </div>
 </body>
