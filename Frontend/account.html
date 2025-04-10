@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <title>회원가입 양식</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      height: 100%;
+      overflow-y: auto;
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
 
     .signup-box {
@@ -18,7 +24,8 @@
       padding: 30px 40px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 400px;
+      max-width: 400px;
+      width: 100%;
     }
 
     .signup-box h1 {
@@ -45,7 +52,6 @@
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      box-sizing: border-box;
     }
 
     .radio-group,
@@ -53,9 +59,21 @@
       margin-bottom: 15px;
     }
 
-    .radio-group label,
-    .checkbox-group label {
+    .radio-group label {
       margin-right: 10px;
+      font-weight: normal;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
       font-weight: normal;
     }
 
@@ -110,20 +128,13 @@
 
       <label>경험 언어 (복수 선택 가능):</label>
       <div class="checkbox-group">
-        <input type="checkbox" id="lang-html" name="languages" value="HTML">
-        <label for="lang-html">HTML</label>
-        <input type="checkbox" id="lang-css" name="languages" value="CSS">
-        <label for="lang-css">CSS</label>
-        <input type="checkbox" id="lang-js" name="languages" value="JavaScript">
-        <label for="lang-js">JavaScript</label>
-        <input type="checkbox" id="lang-python" name="languages" value="Python">
-        <label for="lang-python">Python</label>
-        <input type="checkbox" id="lang-java" name="languages" value="Java">
-        <label for="lang-java">Java</label>
-        <input type="checkbox" id="lang-cpp" name="languages" value="C++">
-        <label for="lang-cpp">C++</label>
-        <input type="checkbox" id="lang-go" name="languages" value="Go">
-        <label for="lang-go">Go</label>
+        <label><input type="checkbox" name="languages" value="HTML">HTML</label>
+        <label><input type="checkbox" name="languages" value="CSS">CSS</label>
+        <label><input type="checkbox" name="languages" value="JavaScript">JavaScript</label>
+        <label><input type="checkbox" name="languages" value="Python">Python</label>
+        <label><input type="checkbox" name="languages" value="Java">Java</label>
+        <label><input type="checkbox" name="languages" value="C++">C++</label>
+        <label><input type="checkbox" name="languages" value="Go">Go</label>
       </div>
 
       <label for="bio">개인 소개 (5줄 이내):</label>
