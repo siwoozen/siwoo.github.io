@@ -84,6 +84,16 @@
       font-weight: normal;
     }
 
+    .birth-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .birth-group select {
+      flex: 1;
+    }
+
     .button-group {
       display: flex;
       justify-content: space-between;
@@ -147,6 +157,29 @@
         <label><input type="radio" id="female" name="gender" value="여자"> 여자</label>
       </div>
 
+      <label>생년월일:</label>
+      <div class="birth-group">
+        <select name="birth_year" required>
+          <option value="">년도</option>
+          <!-- 예시 연도, 필요 시 JS로 자동 생성 가능 -->
+          <option value="1990">1990</option>
+          <option value="1995">1995</option>
+          <option value="2000">2000</option>
+          <option value="2005">2005</option>
+          <option value="2010">2010</option>
+          <option value="2015">2015</option>
+          <option value="2020">2020</option>
+        </select>
+        <select name="birth_month" required>
+          <option value="">월</option>
+          ${[...Array(12)].map((_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
+        </select>
+        <select name="birth_day" required>
+          <option value="">일</option>
+          ${[...Array(31)].map((_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
+        </select>
+      </div>
+
       <label for="experience">개발 경력:</label>
       <select id="experience" name="experience">
         <option value="없음">없음</option>
@@ -171,7 +204,7 @@
       <textarea id="bio" name="bio" rows="5" maxlength="500" placeholder="자기소개를 입력하세요 (최대 5줄)"></textarea>
 
       <label for="blog">개인 블로그 주소:</label>
-      <input type="url" id="blog" name="blog" placeholder="블로그 주소를 입력하세요 (http로 시작)">
+      <input type="url" id="blog" name="blog" placeholder="블로그 주소를 입력하세요 (http://...)">
 
       <label for="company">현재 근무 회사명:</label>
       <select id="company" name="company" required>
