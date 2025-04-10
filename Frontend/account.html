@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입 양식</title>
+</head>
+<body>
+  <h1>회원가입</h1>
+  <form action="#" method="post">
+    <label for="userid">아이디:</label>
+    <input type="text" id="userid" name="userid" required><br><br>
+
+    <label for="password">암호:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="name">이름:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="email">이메일:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label>성별:</label>
+    <input type="radio" id="male" name="gender" value="남자" required>
+    <label for="male">남자</label>
+    <input type="radio" id="female" name="gender" value="여자">
+    <label for="female">여자</label><br><br>
+
+    <label for="experience">개발 경력:</label>
+    <select id="experience" name="experience">
+      <option value="없음">없음</option>
+      <option value="1년 미만">1년 미만</option>
+      <option value="1~3년">1~3년</option>
+      <option value="3~5년">3~5년</option>
+      <option value="5년 이상">5년 이상</option>
+    </select><br><br>
+
+    <label>경험 언어 (복수 선택 가능):</label><br>
+    <input type="checkbox" id="lang-html" name="languages" value="HTML">
+    <label for="lang-html">HTML</label>
+    <input type="checkbox" id="lang-css" name="languages" value="CSS">
+    <label for="lang-css">CSS</label>
+    <input type="checkbox" id="lang-js" name="languages" value="JavaScript">
+    <label for="lang-js">JavaScript</label>
+    <input type="checkbox" id="lang-python" name="languages" value="Python">
+    <label for="lang-python">Python</label>
+    <input type="checkbox" id="lang-java" name="languages" value="Java">
+    <label for="lang-java">Java</label>
+    <input type="checkbox" id="lang-cpp" name="languages" value="C++">
+    <label for="lang-cpp">C++</label>
+    <input type="checkbox" id="lang-go" name="languages" value="Go">
+    <label for="lang-go">Go</label><br><br>
+
+    <label for="bio">개인 소개 (5줄 이내):</label><br>
+    <textarea id="bio" name="bio" rows="5" cols="40" maxlength="500" placeholder="자기소개를 입력하세요 (최대 5줄)"></textarea><br><br>
+
+    <label for="blog">개인 블로그 주소:</label>
+    <input type="url" id="blog" name="blog"><br><br>
+
+    <label for="company">현재 근무 회사명:</label>
+    <select id="company" name="company" required>
+      <option value="">선택하세요</option>
+      <option value="네이버">네이버</option>
+      <option value="카카오">카카오</option>
+      <option value="라인">라인</option>
+      <option value="토스">토스</option>
+      <option value="배달의민족">배달의민족</option>
+      <option value="쿠팡">쿠팡</option>
+      <option value="당근마켓">당근마켓</option>
+      <option value="삼성전자">삼성전자</option>
+      <option value="LG전자">LG전자</option>
+      <option value="현대자동차">현대자동차</option>
+    </select><br><br>
+
+    <input type="submit" value="가입하기">
+  </form>
+</body>
+</html>

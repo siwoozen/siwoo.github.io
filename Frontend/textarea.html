@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECT 태그 실습</title>
+    <style>
+        body {
+          /*font-family: Arial, sans-serif;*/
+          border:1px solid black;
+          padding: 30px;
+          margin:0;
+        }
+    
+        label {  /*tag, class, id, child, parent, sibling*/
+          font-weight: bold;
+          margin-right: 10px;
+        }
+    
+        select {
+          padding: 8px;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        }
+    
+        #result {
+          margin-top: 20px;
+          font-size: 18px;
+          color: #007bff;
+        }
+      </style>
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+      <script>
+        $(document).ready(function() {
+          $('#language').change(function() {
+            const selectedValue = $(this).val();
+            if (selectedValue) { //ES6+ 문법, 서식문자열 생성
+                //alert('선택한 언어는 ' + selectedValue + '입니다.');
+                //alert(`선택한 언어는 ${selectedValue}입니다.`);
+                $('#result').text(`선택한 언어는 ${selectedValue}입니다.`);
+            } else {
+              $('#result').text('');
+            }
+          });
+        });
+      </script>
+    </head>
+    <body>
+   <h1>SELECT 태그 실습</h1>
+   <form action="target.html" method="get">
+      <label for="language">좋아하는 언어를 선택하세요:</label>
+      <select id="language" name="language" required>
+        <option value="">-- 선택 --</option>
+        <option value="Python">Python</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Java">Java</option>
+        <option value="C++">C++</option>
+      </select>
+      <div>
+        <button type="reset">초기화</button>
+        <button type="submit">제출</button>
+      </div>
+    </form>
+      <div id="result"></div>
+    </body>
+    </html>

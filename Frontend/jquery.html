@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Template</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Welcome to jQuery</h1>
+    <button id="clickMe">Click Me</button>
+    <p id="message"></p>
+
+    <script>
+        
+        var val = window.document.getElementById('clickMe').value;
+        val = document.querySelector('#clickMe').value;
+        let value = $('#clickMe').val;
+        /*
+        var 변수선언 키워드: 함수 범위 안에서 사용 가능
+        let 변수선언 키워드: 블록 범위 안에서 사용 가능 (if, for, while 등)
+        const 변수선언 키워드: 상수, 블록 범위 안에서 사용 가능 (변경 불가)
+        */
+    
+        $(document).ready(function() {  // DOM이 준비되면 실행
+            $('#div1').text('Hello World!');
+            $('#rangeInput').on('input', function() {  // rangeInput의 값이 변경될 때마다 실행
+                var dan = $(this).val();  // this는 현재 선택된 요소를 가리킴
+                var gugu = "";  // 구구단을 저장할 변수 초기화
+                for (let i=1 ; i<10 ; i++) {
+                    gugu += dan + " * " + i + " = " + (dan*i) + "<br>";  // 구구단을 문자열로 저장
+                }
+                $('#rangeOutput').text(dan);  // jQuery를 사용하여 rangeOutput에 값 추가
+                $('#div1').html(gugu);  // jQuery를 사용하여 div1에 HTML 추가
+            });
+            
+            $('#colorInput').on('change', function() {  // colorInput의 값이 변경될 때마다 실행
+                var color = $(this).val();  // this는 현재 선택된 요소를 가리킴
+                $('#div1').css('background-color', color);  // jQuery를 사용하여 div1의 글자 색상 변경
+            });
+
+            $('#dateInput').on('change', function() {  // dateInput의 값이 변경될 때마다 실행
+                var date = $(this).val();  // this는 현재 선택된 요소를 가리킴
+                $('#div1').text(date);  // jQuery를 사용하여 div1에 날짜 추가
+            });
+        });
+        
+    </script>
+
+    <div id="div1"></div> <!-- obj.id,  obj.innerText -->
+    <div id="div2">
+        <input type="range" id="rangeInput" min="2" max="9" value="2">
+        <output id="rangeOutput">0</output>
+    </div>
+    <div>
+        <input type="color" id="colorInput" value="#ff0000">
+    </div>
+    <div>
+        <input type="date" id="dateInput" name="dateinput" value="2023-10-01">
+    </div>
+    <div>
+        <input type="file" id="file" name="file">
+    </div>
+    <div>
+        <input type="hidden" id="ser" name="ser" value="23452345234523452345234">
+    </div>
+    <!--select, option, textarea -->
+</body>
+</html>

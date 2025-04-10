@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          /*font-family: Arial, sans-serif;*/
+          border:1px solid black;
+          padding: 30px;
+        }
+    
+        label {
+          font-weight: bold;
+          margin-right: 10px;
+        }
+    
+        select {
+          padding: 8px;
+          font-size: 16px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+        }
+    
+        #result {
+          margin-top: 20px;
+          font-size: 18px;
+          color: #007bff;
+        }
+      </style>
+    </head>
+    <body>
+    
+      <label for="language">좋아하는 언어를 선택하세요:</label>
+      <select id="language">
+        <option value="">-- 선택 --</option>
+        <option value="Python">Python</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Java">Java</option>
+        <option value="C++">C++</option>
+      </select>
+    
+      <div id="result"></div>
+    
+      <script>
+        function showSelectedValue() {
+          const select = document.getElementById("language");
+          const resultDiv = document.getElementById("result");
+          const selected = select.value;
+    
+          if (selected) {
+            resultDiv.textContent = `선택한 언어는 ${selected}입니다.`;
+          } else {
+            resultDiv.textContent = "";
+          }
+        }
+      </script>
+    
+    </body>
+    </html>
