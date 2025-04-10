@@ -41,6 +41,45 @@
     th {
       background-color: #f2f2f2;
     }
+
+    /* 📌 새로 추가된 버튼 스타일 */
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+
+    .link-box {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      background-color: #2196F3;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .link-box:hover {
+      background-color: #1976D2;
+    }
   </style>
   <script>
     alert('Hello World');
@@ -60,7 +99,7 @@
   <!-- hover 예제 -->
   <p class="name">깨찰빵</p>
 
-  <!-- 링크 -->
+  <!-- 외부 링크 -->
   <p>
     <a href="https://siwoozen.github.io/siuuuuu/index.html" target="_blank" rel="noopener" style="text-decoration: none; color: black; font-weight: bold;">
       검은고양이 네로 🐈‍⬛
@@ -99,7 +138,17 @@
   <div style="text-align: center; margin-top: 100px;">
     <span class="cat-hover">🐾 검은고양이 네로 🐾</span>
   </div>
-    <h1>연습습합니다!</h1>
-    <a href="target.html" target="_blank" class="link-box">수습 국원 지원 양식</a>
+
+  <h1>연습합니다!</h1>
+  <a href="target.html" target="_blank" class="link-box">수습 국원 지원 양식</a>
+
+  <!-- 🔥 HTML 파일들로 이동하는 버튼 -->
+  <div class="nav-buttons">
+    <a href="jquery.html">jQuery</a>
+    <a href="select.html">Select</a>
+    <a href="target.html">Target</a>
+    <a href="textarea.html">Textarea</a>
+    <a href="account.html">account</a>
+  </div>
 </body>
 </html>
