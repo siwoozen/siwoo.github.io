@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX 회원정보 불러오기</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+  <h1>회원 목록</h1>
+  <button id="load-members">회원 불러오기</button>
+  <ul id="member-list"></ul>
+
+  <script>
+    $('#load-members').click(function() {
+      $.ajax({
+        url: 'members.json',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          $('#member-list').empty(); // 기존 내용 지우기
+          data.forEach(function(member) {
+            $('#member-list').append(
+              `<li>ID: ${member.id}, 전화번호: ${member.phone}</li>`
+            );
+          });
+        },
+        error: function() {
+          alert('회원 정보를 불러오는 데 실패했습니다.');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
