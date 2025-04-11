@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic DOM with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #tag-container { margin-top: 20px; }
+        .tag { padding: 5px 10px; margin: 5px; background-color: #f0f0f0; display: inline-block; border-radius: 5px; }
+        .edit-btn, .delete-btn { margin-left: 5px; cursor: pointer; color: blue; }
+      </style>
+      <script>
+        $(document).ready(function() {
+          // 태그 추가
+          $('#add-tag').click(function() {
+            const tagText = $('#new-tag').val().trim();
+            if (tagText) {
+              const tag = $('<span class="tag"></span>').text(tagText);
+              const editBtn = $('<span class="edit-btn">[수정]</span>');
+              const deleteBtn = $('<span class="delete-btn">[삭제]</span>');
+        
+              tag.append(editBtn).append(deleteBtn); // 수정 및 삭제 버튼을 하위에 추가
+              $('#tag-container').append(tag);       // 현재 웹문서에 추가
+              $('#new-tag').val('');
+            }
+          });
+        
+          // 태그 수정
+          $('#tag-container').on('click', '.edit-btn', function() {
+            const tag = $(this).parent();  // $(this)는 버튼이므로 부모 태그를 선택
+            const currentText = tag.clone().children().remove().end().text(); // 텍스트만 추출
+            const newText = prompt('수정할 태그 내용을 입력하세요:', currentText);
+            if (newText) {
+              tag.contents().first().replaceWith(newText); // 텍스트만 수정
+            }
+          });
+        
+          // 태그 삭제
+          $('#tag-container').on('click', '.delete-btn', function() {
+            confirm('정말로 삭제하시겠습니까?') && $(this).parent().fadeOut(300, function() {
+                // 애니메이션 후 부모태그 삭제(포함된 자식 태그도 삭제됨)
+                $(this).parent().remove();
+            });
+            });
+        });
+    </script>
+    </head>
+    <body>
+    
+      <input type="text" id="new-tag" placeholder="새 태그의 텍스트 데이터 입력">
+      <button id="add-tag">추가</button>
+    
+      <div id="tag-container"></div>
+    
+    </body>
+    </html>
